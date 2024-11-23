@@ -3,15 +3,20 @@ import initialState from './initialState';
 import shortid from 'shortid';
 
 const reducer = (state = initialState, action) => {
+
     switch(action.type) {
         case 'ADD_COLUMN':
             return { ...state, columns: [...state.columns, { ...action.payload, id: shortid() }]};
         case 'ADD_CARD':
             return { ...state, cards: [...state.cards, { ...action.payload, id: shortid() }]};
+        case 'SEARCH_CARD':
+            return { ...state, searchValue: action.payload };
       default:
         return state;
     }
   };
+
+  
 
 const store = createStore(
   reducer,
