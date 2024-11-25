@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import { useDispatch } from 'react-redux';
+import { addCart } from '../../redux/store';
 
 const CardForm = props => {
 
@@ -12,7 +13,7 @@ const CardForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch({ type: 'ADD_CARD', payload: { title, columnId: props.columnId } });
+        dispatch(addCart({ title, columnId: props.columnId }));
         setTitle('');
     };
 
