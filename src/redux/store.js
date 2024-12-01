@@ -9,6 +9,12 @@ export const getFilteredCards = ({cards, searchValue}, columnId) => cards
 
 export const getAllColumns = ({columns}) => columns;
 
+export const getAllLists = ({lists}) => lists;
+
+export const getListById = ({lists}, listId) => lists.find(list => list.id === listId) ;
+
+export const getColumnsByList = ({columns}, listId) => columns.filter(column => column.listId === listId);
+
 // action creators
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
 export const addCart = payload => ({ type: 'ADD_CARD', payload });
