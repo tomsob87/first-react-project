@@ -18,25 +18,25 @@ const initialState = {
       id: 1,
       title: 'Books',
       icon: 'book',
-      listId: 1,
+      listId: '1',
     },
     {
       id: 2,
       title: 'Movies',
       icon: 'film',
-      listId: 1,
+      listId: '1',
     },
     {
       id: 3,
       title: 'Games',
       icon: 'gamepad',
-      listId: 1,
+      listId: '1',
     },
     {
       id: 4,
       title: 'Test column',
       icon: 'circle',
-      listId: 2,
+      listId: '2',
     }
   ],
   
