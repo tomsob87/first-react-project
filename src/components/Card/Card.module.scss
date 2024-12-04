@@ -10,4 +10,15 @@
     display: flex;
     justify-content: space-between;
     font-weight: bold;
+    span {
+        cursor: pointer;
+        &:hover {
+            color: gold;
+        }
+    }
 }
+
+.card span.is-favorite {
+    color: gold;
+}
+

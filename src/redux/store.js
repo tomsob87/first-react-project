@@ -7,6 +7,8 @@ import compareSearchValue from '../utils/strContains';
 export const getFilteredCards = ({cards, searchValue}, columnId) => cards
   .filter(card => card.columnId === columnId && compareSearchValue(card.title, searchValue));
 
+export const getFavoriteCards = ({cards}) => cards.filter(card => card.isFavorite);  
+
 export const getAllColumns = ({columns}) => columns;
 
 export const getAllLists = ({lists}) => lists;
@@ -21,6 +23,7 @@ export const addCart = payload => ({ type: 'ADD_CARD', payload });
 export const searchCard = payload => ({ type: 'SEARCH_CARD', payload });
 export const resetSearchValue = () => ({type: 'RESET_SEARCH_VALUE'});
 export const addList = payload => ({type: 'ADD_LIST', payload});
+export const toggleCardFavorite = payload => ({type: 'TOGGLE_CARD_FAVORITE', payload});
 
 const reducer = (state = initialState, action) => {
 
@@ -36,6 +39,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 searchValue: ''
             };
+        case 'TOGGLE_CARD_FAVORITE':
+            return { ...state, cards: state.cards.map(card => (card.id === action.payload) ? { ...card, isFavorite: !card.isFavorite } : card) };    
         case 'ADD_LIST':
           return { ...state, lists: [...state.lists, { ...action.payload, id: shortid() }]};    
       default:

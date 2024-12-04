@@ -1,2 +1,31 @@
 @import '../../styles/settings.scss';
 
+.column {
+    margin: 0 auto;
+    width: 40%;
+    color: $color-dark;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    background: $color-light;
+    border: 1px solid lighten($color-dark, 60%);
+    padding: $base-size;
+    margin: 0 0 $base-size 0;
+    border-radius: $radius;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    span {
+        cursor: pointer;
+        &:hover {
+            color: gold;
+        }
+    }
+}
+
+.card span.is-favorite {
+    color: gold;
+}
+
