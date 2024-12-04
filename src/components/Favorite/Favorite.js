@@ -11,13 +11,19 @@ const Favorite = props => {
 
     return (
         <>
-        <PageTitle>Favorite</PageTitle>
-        <p>Lorem ipsum.</p>
-        <article className={styles.column}>
-            <ul className={styles.cards}>
-                {favoriteCards.map(card => <Card key={card.id} id={card.id} title={card.title} />)}
-            </ul>
-        </article>
+            <PageTitle>Favorite</PageTitle>
+            <p className={styles.description}>Lorem ipsum.</p>
+                <article className={styles.column}>
+                    <h2 className={styles.title}>My Favorite</h2>
+                    <ul className={styles.cards}>
+                        {favoriteCards.map(card => 
+                        <Card key={card.id} 
+                        id={card.id} 
+                        title={card.title} 
+                        isFavorite={card.isFavorite}
+                        />)}
+                    </ul>
+                </article>     
         </>
 
     );

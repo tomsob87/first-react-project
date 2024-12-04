@@ -12,7 +12,14 @@ const Card = props => {
     }
 
     return (
-        <li className={styles.card} onClick={handleToggleFavorite}>{props.title} <span className="fa fa-star-o" ></span></li>
+        <li className={styles.card} >{props.title} 
+        <span 
+        
+        className={`fa fa-star-o ${props.isFavorite ? styles.favorite : ''}`} 
+        onClick={handleToggleFavorite}
+        
+        ></span>
+        </li>
     );
 };
 
