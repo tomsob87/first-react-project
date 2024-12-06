@@ -13,6 +13,10 @@ const Favorite = props => {
         <>
             <PageTitle>Favorite</PageTitle>
             <p className={styles.description}>Lorem ipsum.</p>
+
+            {favoriteCards.length === 0 ? (
+                <p className={styles.description}>No favorite cards to show</p>
+            ) : (
                 <article className={styles.column}>
                     <h2 className={styles.title}>My Favorite</h2>
                     <ul className={styles.cards}>
@@ -23,7 +27,9 @@ const Favorite = props => {
                         isFavorite={card.isFavorite}
                         />)}
                     </ul>
-                </article>     
+                </article> 
+            )}
+    
         </>
 
     );

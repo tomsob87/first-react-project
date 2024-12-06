@@ -12,6 +12,7 @@ const Card = props => {
     }
 
     return (
+        
         <li className={styles.card} >{props.title} 
         <span 
         
