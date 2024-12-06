@@ -4,9 +4,10 @@ import ColumnForm from '../ColumnForm/ColumnForm';
 import SearchForm from '../../components/SearchForm/SearchForm'
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getListById, getColumnsByList, resetSearchValue } from '../../redux/store';
+import { resetSearchValue } from '../../redux/searchStringReducer';
 import { useParams, Navigate } from 'react-router';
-
+import { getListById } from '../../redux/listsReducer';
+import { getColumnsByList } from '../../redux/columnsReducer';
 
 
 const List = () => {
