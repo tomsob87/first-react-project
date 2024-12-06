@@ -4,6 +4,7 @@ import Card from '../Card/Card';
 import { useSelector } from 'react-redux';
 import { getFavoriteCards } from '../../redux/cardsReducer';
 import styles from './Favorite.module.scss';
+import SearchForm from '../SearchForm/SearchForm';
 
 const Favorite = props => {
 

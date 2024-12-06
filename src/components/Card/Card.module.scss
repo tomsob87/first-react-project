@@ -8,9 +8,14 @@
     margin: 0 0 $base-size 0;
     border-radius: $radius;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     font-weight: bold;
+    p {
+        flex-basis: 90%;
+        margin: 0;
+    }
     span {
+        flex-basis: 10%;
         cursor: pointer;
         transition: .2s;
         &:hover {
